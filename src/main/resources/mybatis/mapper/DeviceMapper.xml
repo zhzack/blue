@@ -8,9 +8,14 @@
         values (#{device_name}, #{user_id}, #{device_mac})
     </insert>
 
+    <insert id="insert_Device">
+        insert into device(user_id, device_mac)
+        values (#{user_id}, #{device_mac})
+    </insert>
+
 
     <insert id="insert_deviceLog">
-        insert into device_log(status, device_id)
+        insert into device(device_status, device_id)
         values (#{status}, #{device_id})
     </insert>
 

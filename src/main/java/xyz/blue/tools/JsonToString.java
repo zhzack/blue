@@ -30,12 +30,7 @@ public class JsonToString {
 //    }
 
     public static String DeviceMsg(String msg) {
-
-
         JSONObject obj = JSON.parseObject(msg);
-
         return null;
-
-
     }
 }

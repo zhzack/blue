@@ -50,12 +50,25 @@ public class Device {
         this.status = status;
     }
 
-
+    public Device(String device_id, String device_name, Integer user_id, boolean status, String device_mac) {
+        this.device_id = device_id;
+        this.device_name = device_name;
+        this.user_id = user_id;
+        this.status = status;
+        this.device_mac = device_mac;
+    }
 
     public Device(String device_name, String device_mac, Integer user_id) {
         this.device_name = device_name;
         this.user_id = user_id;
         this.device_mac = device_mac;
+    }
+
+    public Device(int device_mac, int user_id, boolean status) {
+        this.device_mac = String.valueOf(device_mac);
+        this.user_id = user_id;
+        this.status = status;
+
     }
 
     public String getDevice_id() {

@@ -35,10 +35,12 @@ public class Client implements Serializable, StatusConstant {
 //            this.DeviceList.addAll(deviceService.query_deviceById(Integer.parseInt(client_id)));
         }
 //        除去id前的零
-        for (int i = 0; i < this.client_id.length(); i++) {
-            if (!String.valueOf(this.client_id.charAt(i)).equals("0")) {
-                this.client_id = this.client_id.substring(i);
-                break;
+        if (this.identity == USER) {
+            for (int i = 0; i < this.client_id.length(); i++) {
+                if (!String.valueOf(this.client_id.charAt(i)).equals("0")) {
+                    this.client_id = this.client_id.substring(i);
+                    break;
+                }
             }
         }
         this.session = session;

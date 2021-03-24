@@ -7,7 +7,6 @@
         <result column="msg_identityCode" jdbcType="INTEGER" property="msg_identityCode"/>
         <result column="msg_sent_id" jdbcType="INTEGER" property="msg_sent_id"/>
         <result column="msg_receive_id" jdbcType="INTEGER" property="msg_receive_id"/>
-        <result column="msg_sent_date" jdbcType="TIMESTAMP" property="msg_sent_date"/>
         <result column="msg_text" jdbcType="CHAR" property="msg_text"/>
     </resultMap>
     <sql id="Base_Column_List">

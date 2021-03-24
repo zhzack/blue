@@ -32,6 +32,7 @@ public class ChildDeviceController {
         Msg msg = new Msg("00", "1", "00000001", "00000002", "123");
 
         msgService.insert(msg);
+        System.out.println(msg.toString());
     }
 
 

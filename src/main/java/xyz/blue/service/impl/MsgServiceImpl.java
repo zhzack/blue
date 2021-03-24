@@ -1,12 +1,16 @@
 package xyz.blue.service.impl;
 
 
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import xyz.blue.mapper.MsgMapper;
 import xyz.blue.pojo.Msg;
 import xyz.blue.service.MsgService;
 
+import java.util.concurrent.CompletableFuture;
+
 @Service("DevicesService")//别名
+@Async
 public class MsgServiceImpl implements MsgService {
 
     private final MsgMapper msgMapper;
@@ -17,34 +21,34 @@ public class MsgServiceImpl implements MsgService {
 
 
     @Override
-    public int deleteByPrimaryKey(Integer msg_id) {
-        return 0;
+    public CompletableFuture<Integer> deleteByPrimaryKey(Integer msg_id) {
+        return CompletableFuture.completedFuture(0);
     }
 
     @Override
-    public int insert(Msg record) {
+    public CompletableFuture<Integer> insert(Msg record) {
         msgMapper.insert(record);
-        return 0;
+        return CompletableFuture.completedFuture(0);
     }
 
     @Override
-    public int insertSelective(Msg record) {
-        return 0;
+    public CompletableFuture<Integer> insertSelective(Msg record) {
+        return CompletableFuture.completedFuture(0);
     }
 
     @Override
-    public Msg selectByPrimaryKey(Integer msg_id) {
-        return null;
+    public CompletableFuture<Msg> selectByPrimaryKey(Integer msg_id) {
+        return CompletableFuture.completedFuture(null);
     }
 
     @Override
-    public int updateByPrimaryKeySelective(Msg record) {
-        return 0;
+    public CompletableFuture<Integer> updateByPrimaryKeySelective(Msg record) {
+        return CompletableFuture.completedFuture(0);
     }
 
     @Override
-    public int updateByPrimaryKey(Msg record) {
-        return 0;
+    public CompletableFuture<Integer> updateByPrimaryKey(Msg record) {
+        return CompletableFuture.completedFuture(0);
     }
 }
 

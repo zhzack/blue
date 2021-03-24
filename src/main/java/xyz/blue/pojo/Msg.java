@@ -120,16 +120,39 @@ public class Msg implements Serializable, StatusConstant {
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() +
-                " [" +
-                "Hash = " + hashCode() +
-                ", msg_id=" + msg_id +
-                ", msg_infoCode=" + msg_infoCode +
-                ", msg_identityCode=" + msg_identityCode +
-                ", msg_sent_id=" + msg_sent_id +
-                ", msg_receive_id=" + msg_receive_id +
-                ", msg_text=" + msg_text +
-                ", serialVersionUID=" + serialVersionUID +
-                "]";
+        String msg = "";
+        switch (msg_infoCode) {
+            case MESSAGE:
+                msg += "消息\n";
+                break;
+            case REQUEST:
+                msg += "请求\n";
+                break;
+            case RESPOND:
+                msg += "响应\n";
+                break;
+            case CONTEST:
+                msg += "心跳\n";
+                break;
+            default:
+                break;
+        }
+        switch (msg_identityCode) {
+            case DEVICETODEVICE:
+                msg += "<设备对设备>";
+                break;
+            case USERTOUSER:
+                msg += "<用户对用户>";
+                break;
+            case DEVICETOUSER:
+                msg += "<设备对用户>";
+                break;
+            case USERTODEVICE:
+                msg += "<用户对设备>";
+                break;
+            default:
+                break;
+        }
+        return msg + "<发送者id>" + msg_sent_id + "<接收者id>" + msg_receive_id + "<信息内容:>" + msg_text;
     }
 }

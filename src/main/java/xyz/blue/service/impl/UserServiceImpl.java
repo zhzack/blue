@@ -8,6 +8,7 @@ import xyz.blue.service.UserService;
 
 //@Service
 @Service("UserService")//别名
+
 public class UserServiceImpl implements UserService {
 
     final

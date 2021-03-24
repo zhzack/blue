@@ -18,6 +18,7 @@ public interface StatusConstant {
     int IDENTITYCODE = ENDINFOCODE;
     int USER = 0;
     int DEVICE = 1;
+
     //    设备对设备
     String DEVICETODEVICE = "0";
     //   用户对用户

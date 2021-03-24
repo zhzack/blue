@@ -2,19 +2,22 @@ package xyz.blue.service;
 
 import xyz.blue.pojo.Msg;
 
+import java.util.concurrent.CompletableFuture;
+
+
 public interface MsgService {
 
-    int deleteByPrimaryKey(Integer msg_id);
+    CompletableFuture<Integer> deleteByPrimaryKey(Integer msg_id);
 
-    int insert(Msg record);
+    CompletableFuture<Integer> insert(Msg record);
 
-    int insertSelective(Msg record);
+    CompletableFuture<Integer> insertSelective(Msg record);
 
-    Msg selectByPrimaryKey(Integer msg_id);
+    CompletableFuture<Msg> selectByPrimaryKey(Integer msg_id);
 
-    int updateByPrimaryKeySelective(Msg record);
+    CompletableFuture<Integer> updateByPrimaryKeySelective(Msg record);
 
-    int updateByPrimaryKey(Msg record);
+    CompletableFuture<Integer> updateByPrimaryKey(Msg record);
 
 
 }

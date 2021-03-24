@@ -29,6 +29,11 @@ public class DeviceServiceImpl implements DeviceService {
     }
 
     @Override
+    public void insert_Device(Device device) {
+        deviceMapper.insert_Device(device);
+    }
+
+    @Override
     public void insert_deviceLog(Device device) {
         deviceMapper.insert_deviceLog(device);
     }
